@@ -1,13 +1,13 @@
 const { db } = require("../pgAdaptor");
 const { GraphQLObjectType, GraphQLID } = require("graphql");
-const { UserType, ProjectType } = require("./types");
+const { UserType, PostType } = require("./types");
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   type: "Query",
   fields: {
     project: {
-      type: ProjectType,
+      type: PostType,
       args: { id: { type: GraphQLID } },
       resolve(parentValue, args) {
         const query = `SELECT * FROM post WHERE id=$1`;
