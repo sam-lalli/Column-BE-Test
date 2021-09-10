@@ -1,7 +1,7 @@
-const graphql = require("graphql");
-const db = require("../pgAdaptor").db;
+import graphql from "graphql";
+import { db } from "../pgAdaptor";
 const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
-const { PostType } = require("./types");
+import { PostType } from "./types";
 
 const RootMutation = new GraphQLObjectType({
   name: "RootMutationType",
@@ -32,4 +32,4 @@ const RootMutation = new GraphQLObjectType({
   }
 });
 
-exports.mutation = RootMutation;
+export const mutation = RootMutation;

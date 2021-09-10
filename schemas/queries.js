@@ -1,6 +1,6 @@
-const { db } = require("../pgAdaptor");
-const { GraphQLObjectType, GraphQLID } = require("graphql");
-const { UserType, PostType } = require("./types");
+import { db } from "../pgAdaptor";
+import { GraphQLObjectType, GraphQLID } from "graphql";
+import { UserType, PostType } from "./types";
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
@@ -35,4 +35,4 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
-exports.query = RootQuery;
+export const query = RootQuery;

@@ -1,4 +1,4 @@
-const graphql = require("graphql");
+import graphql from "graphql";
 const { GraphQLObjectType, GraphQLString } = graphql;
 
 const UserType = new GraphQLObjectType({
@@ -30,5 +30,6 @@ const PostType = new GraphQLObjectType({
   }
 });*/
 
-exports.UserType = UserType;
-exports.ProjectType = PostType;
+const _UserType = UserType;
+export { _UserType as UserType };
+export const ProjectType = PostType;
